@@ -1,0 +1,279 @@
+.container{
+  
+ 
+    display:flex;
+    /* align-items: center; */
+    height: 41vw;
+    width: 60vw;
+    
+    background-color: rgba(7, 0, 0, 0.381);
+    backdrop-filter: blur(8px);
+    margin-top: 50px;
+    animation-name: container;
+    justify-content: center;
+    animation-duration: 1s;
+    animation-delay: .1s;
+  }
+  /* .container :hover{
+    height: 41vw;
+    width: 35vw;
+  } */
+
+  .container2{
+    background: url(./src/assets/defaultbackground.jpg);
+    background-size:cover;
+    background-repeat:no-repeat ;
+    height: 41vw;
+    width: 35vw;
+    display: flex;
+  position: absolute;
+  left: 0;
+ 
+
+  }
+  .container3{
+    
+    display:flex;
+    /* align-items: center; */
+    height: 41vw;
+    width: 60vw;
+    justify-content: center;
+    background-color: rgba(7, 0, 0, 0.381);
+    backdrop-filter: blur(8px);
+    margin-top: 50px;
+  }
+  @keyframes container{
+from{
+  width:35vw ;
+  opacity: 0.5;
+  visibility: hidden;
+}
+to{
+ width: 60vw;
+ opacity: 1;
+ visibility:visible;
+
+}
+  }
+  .current-time{
+    display: flex;
+   position: absolute;
+   bottom: 3vmax;
+   left: 1vmax;
+   font-size: 3.5vw;
+  }
+  .current-date{
+    display: flex;
+   position: absolute;
+   bottom: 1vmax;
+   left: 1vmax;
+   font-size:1vw;
+  }
+  .city{
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    font-size: 2vw;
+    right: 1rem;
+  }
+  .temp{
+    display: flex;
+    position: absolute;
+    bottom: 0.4rem;
+  right: 1rem;
+    font-size: 3vw;
+  }
+  img{
+    width: 15%;
+    display: flex;
+    position: absolute;
+    top: 2.5vw;
+    right: 12%;
+  }
+  .weather-details{
+    width: 40%;
+    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 1%;
+    font-size: 2vw;
+    color:white;
+    top: 9vw;
+  }
+  .line{
+    height: 1px;
+  width: 23vw;
+    background-color: black;
+    position: absolute;
+    top: 12vw;
+    right: 1vw;
+  }
+  .search input{
+    position: absolute;
+      width: 18vw;
+      height: 2vw;
+      background: transparent;
+      outline: none;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      font-size: 1.5vw;
+      font-weight: 200;
+      text-transform: uppercase;
+      right: 5.5vw;
+      top: 13vw;
+  }
+  
+  .search button{
+    position: absolute;
+      font-weight: 200;
+      text-transform: uppercase;
+      right: 0.2vw;
+      top: 12vw;
+      position: absolute;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 2vw;
+      cursor: pointer;
+  }
+  .line2{
+    height: 1px;
+  width: 23vw;
+    position: absolute;
+    top: 15.7vw;
+    background-color: black;
+  
+    right: 1vw;
+  }
+  .city2{
+    width: 35%;
+    display: flex;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    right: 1vw;
+    font-size: 2vw;
+    top: 16.5vw;
+  }
+  .line3{
+    height: 1px;
+  width: 23vw;
+  background-color: black;
+  
+    position: absolute;
+    top: 20vw;
+    right: 1vw;
+  }
+  .temp1{
+    width: 15%;
+    display: flex;
+    position: absolute;
+    right: 1vw;
+    font-size: 2vw;
+    top: 21vw;
+    height: 2.5vw;
+  width: 23vw;
+  }
+  .span-temp{
+    display:flex;
+   justify-content: space-evenly;
+   position: absolute;
+   right: 0;
+  }
+  .line4{
+    height: 1px;
+  width: 23vw;
+    background-color: black;
+    position: absolute;
+    top: 24.5vw;
+    right: 1vw;
+  }
+  .humidity{
+    height: 2.5vw;
+  width: 23vw;
+    display: flex;
+    position: absolute;
+    right: 1vw;
+    font-size: 2vw;
+    top: 25.5vw;
+  }
+  .span-humidity{
+    margin-left: 9vw;
+   }
+   .line5{
+    height: 1px;
+  width: 23vw;
+    position: absolute;
+    background-color: black;
+    top: 28.5vw;
+    right: 1vw;
+  }
+  .wind{
+    height: 2.5vw;
+    width: 23vw;
+        display: flex;
+    position: absolute;
+    right: 1vw;
+    font-size: 2vw;
+    top: 29.5vw;
+  }
+  .span-wind{
+    margin-left: 8vw;
+    margin-right: 0.5vw;
+   }
+   .line6{
+    height: 1px;
+  width: 23vw;
+  background-color: black;
+    position: absolute;
+    top: 32.5vw;
+    right: 1vw;
+  }
+   p{
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+   }
+   .loading{
+    display: flex;
+    color: rgb(255, 255, 255);
+    width: 25vw;
+    height: 3vw;
+    position: absolute;
+    align-items:end;
+    right:5.5vw;
+    bottom:-1vw;
+   }
+  .loaderimg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    margin: 0 13vw 0 13vw;
+  }
+   /* .line7{
+    height: 2px;
+  width: 23vw;
+  background-color: rgb(255, 255, 255);
+    position: absolute;
+  bottom: 1vw;
+    right: 1vw;
+    animation-name: loadingbar;
+    animation-duration: 1s;
+  }
+  @keyframes loadingbar{
+    from{
+      width: 0vw;
+      to{
+   width: 23vw;
+      }
+    } */
+  
+   

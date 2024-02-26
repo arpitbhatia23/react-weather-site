@@ -26,13 +26,19 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 100vw;
   min-height: 100vh;
   background: url(./assets/background.jpg);
-  background-size:cover ;
+  background-size:100vw 100vh ;
   background-repeat:no-repeat ;
   color: #f9f9f9;
-}
+  overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
 
 h1 {
   font-size: 3.2em;
@@ -69,4 +75,230 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@media only screen and (max-width:600px) {
+  .container{ display:flex;
+    /* align-items: center; */
+    height: 50vh;
+    width: 80vw;
+    
+    background-color: rgba(7, 0, 0, 0.381);
+    backdrop-filter: blur(8px);
+    margin-top: 50px;
+    animation-name: container;
+    justify-content: center;
+    animation-duration: 1s;
+    animation-delay: .1s;}
+    @keyframes container{
+      from{
+        width:55vw ;
+        opacity: 0.5;
+        visibility: hidden;
+      }
+      to{
+       width: 80vw;
+       opacity: 1;
+       visibility:visible;
+      
+      }
+    }
+    .container2{
+      background: url(./src/assets/defaultbackground.jpg);
+      background-size:cover;
+      background-repeat:no-repeat ;
+      height: 50vh;
+      width: 55vw;
+      display: flex;
+    position: absolute;
+    left: 0;
+   
+  
+    }
+    .container3{
+    
+      display:flex;
+      /* align-items: center; */
+      height: 50vh;
+      width: 80vw;
+     justify-content: center;
+      background-color: rgba(7, 0, 0, 0.381);
+      backdrop-filter: blur(8px);
+      margin-top: 50px;
+    }
+    .current-time{
+      display: flex;
+     position: absolute;
+     bottom: 3vmax;
+     left: 1vmax;
+     font-size: 4.5vmax;
+    }
+    .current-date{
+      display: flex;
+     position: absolute;
+     bottom: 1vmax;
+     left: 1vmax;
+     font-size:1.5vmax;
+    }
+    img{
+
+      width: 20%;
+      display: flex;
+      position: absolute;
+      top: 2.5vw;
+      right: 6%;
+      justify-content: center;
+    }
+    .weather-details{
+      width: 24vw;
+      
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      right: 1%;
+      font-size: 2vw;
+      color:white;
+      top: 11vh;
+    }
+    .line{
+      height: 1px;
+    width: 24vw;
+      background-color: black;
+      position: absolute;
+      top: 13vh;
+      right: 1vw;
+
+    }
+    .search input{
+      position: absolute;
+        width: 20vw;
+        height: 2vh;
+        outline: none;
+        border: none;
+        color: white;
+        border-radius: 10px;
+        font-size: 1.5vw;
+        font-weight: 200;
+        text-transform: uppercase;
+        right: 5.5vw;
+        top: 14vh;
+    }
+    .search button{
+      position: absolute;
+        font-weight: 200;
+        text-transform: uppercase;
+        right: 0.2vw;
+        top: 14vh;
+        position: absolute;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 2.3vw;
+        cursor: pointer;
+    }
+    .line2{
+      height: 1px;
+    width: 24vw;
+      position: absolute;
+      top: 16vh;
+      background-color: black;
+    
+      right: 1vw;
+    }
+    .city2{
+      width: 35%;
+      display: flex;
+      position: absolute;
+      text-align: center;
+      justify-content: center;
+      right: 1vw;
+      font-size: 2vw;
+      top: 16.5vh;
+    }
+    .line3{
+      height: 1px;
+    width: 24vw;
+    background-color: black;
+    
+      position: absolute;
+      top: 19vh;
+      right: 1vw;
+    }
+    .temp1{
+      width: 24vw;
+      display: flex;
+      position: absolute;
+      right: 1vw;
+      font-size: 2vw;
+      top: 20vh;
+      height: 2.5vw;
+    }
+    .span-temp{
+      display:flex;
+     justify-content: space-evenly;
+     position: absolute;
+     right: 0;
+    }
+    .line4{
+      height: 1px;
+    width: 24vw;
+      background-color: black;
+      position: absolute;
+      top: 22.5vh;
+      right: 1vw;
+    }
+    .humidity{
+      height: 2.5vw;
+    width: 24vw;
+      display: flex;
+      position: absolute;
+      right: 1vw;
+      font-size: 2vw;
+
+      top: 23.5vh;
+    }
+    .span-humidity{
+      margin-left: 9vw;
+position: absolute;
+     right: 0;     }
+     .line5{
+      height: 1px;
+    width: 24vw;
+      position: absolute;
+      background-color: black;
+      top: 26.5vh;
+      right: 1vw;
+    }
+    .wind{
+      height: 2.5vw;
+      width: 24vw;
+          display: flex;
+      position: absolute;
+      right: 1vw;
+      font-size: 2vw;
+      top: 27.5vh;
+    }
+    .span-wind{
+      margin-left: 8vw;
+      position: absolute;
+      right: 0;     }
+     .line6{
+      height: 1px;
+    width: 24vw;
+    background-color: black;
+      position: absolute;
+      top: 30.5vh;
+      right: 1vw;
+    }
+    .loaderimg{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20vh;
+      margin: 0 13vw 0 13vw;
+    }
+    h3{
+      margin-top: 15vh;
+    }
 }

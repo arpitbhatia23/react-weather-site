@@ -1,0 +1,14 @@
+/* Example CSS */
+.MapContainer {
+    height: 400px; /* Adjust height as needed */
+    width: 100%; /* Adjust width as needed */
+  }
+  
+.searchcontainer{
+    display: flex;
+    height: 41vw;
+    width: 25vw;
+    position: absolute;
+    justify-content: center;
+    right: 0;
+}
