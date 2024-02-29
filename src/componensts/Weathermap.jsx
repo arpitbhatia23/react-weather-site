@@ -2,22 +2,17 @@ import './weathermap.css'
 import React, { useState,useEffect } from 'react'
 import 'leaflet/dist/leaflet.css';
 import {MapContainer,TileLayer,LayersControl,Marker,Popup} from 'react-leaflet'
+import { OpenStreetMapProvider, GeoSearchControl } from 'leaflet-geosearch';
 
 
-export default function Weathermap() {
-
+export default function Weathermap(){
 const[qeury,setquery]=useState()
-const [position,setPosition]=useState({lat
-  : 
-  31.7128704,
-  lon
-  : 
-  76.0774656})
-const handleGetLocation = async () => {
+const [position,setPosition]=useState()
+const handleGetLocation =()=> {
   navigator.geolocation.getCurrentPosition(
     (position) => {
       if (position && position.coords) {
-     let coords={   lat: position.coords.latitude,
+     let coords={lat: position.coords.latitude,
         lon:position.coords.longitude}
         setPosition(coords);
         console.log(coords);
@@ -30,11 +25,11 @@ const handleGetLocation = async () => {
     }
   );
 };
-console.log(position)
 
 useEffect(() => {
  handleGetLocation();
 }, []);
+
 const handleSearch = () => {
   search(qeury);
 };  
@@ -44,20 +39,39 @@ const handleKeyPress = (event) => {
     search(qeury);
   }
 };
-
+if (!position) {
+  return <div>Loading...</div>; // You can replace this with a loading indicator
+}
 
     return(<>
       <MapContainer center={position} zoom={13}  style={{width:'60vw',height:'41vw',display:'flex',marginTop:'3vw'}}>
+      <LayersControl>
         <TileLayer 
    attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" >&copy; OpenStreetMap contributors</a> <a href="https://openweathermap.org/copyright">&copy; openweather contributors'
    url={'https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=AqYeNWgZfsp2BaEVyM6b'}
    />
+
           <Marker position={position}>
       <Popup>
 your location
       </Popup>
     </Marker>
-    <LayersControl>
+    
+    {/* <GeoSearchControl
+        provider={new OpenStreetMapProvider()}
+        showMarker={true}
+        showPopup={false}
+        maxMarkers={1}
+        retainZoomLevel={false}
+        animateZoom={true}
+        autoClose={true}
+      /> */}
+    <LayersControl.Overlay  name='satelite'>
+        <TileLayer 
+   attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" >&copy; OpenStreetMap contributors</a> <a href="https://openweathermap.org/copyright">&copy; openweather contributors'
+   url={'https://api.maptiler.com/maps/satellite/256/{z}/{x}/{y}.jpg?key=AqYeNWgZfsp2BaEVyM6b'}
+   />
+    </LayersControl.Overlay>
     <LayersControl.Overlay  name='temp'>
         <TileLayer 
    attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" >&copy; OpenStreetMap contributors</a> <a href="https://openweathermap.org/copyright">&copy; openweather contributors'
@@ -89,14 +103,7 @@ your location
    />
     </LayersControl.Overlay>
     
-    <LayersControl.Overlay  name='satelite'>
-        <TileLayer 
-   attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" >&copy; OpenStreetMap contributors</a> <a href="https://openweathermap.org/copyright">&copy; openweather contributors'
-   url={'https://api.maptiler.com/maps/satellite/256/{z}/{x}/{y}.jpg?key=AqYeNWgZfsp2BaEVyM6b'}
-   />
-    </LayersControl.Overlay>
-
-
+    
 
     </LayersControl>
     

@@ -200,10 +200,10 @@ return(
    
     return (
       <div className={`acco ${activeIndex === index ? 'active' : ''}`}>
-        <span className='feellike'><span className='feellikeicon'><i class="fa-solid fa-temperature-low"></i></span>{weather && weather.list && weather.list[index] && weather.list[index].main.feels_like}°C</span>
-        <span className='daywind'><span className='windicon'><i class="fa-solid fa-wind"></i></span> {weather && weather.list && weather.list[index] && weather.list[index].wind.speed}km/hr</span>
-        <span className='rainchances'> <span className='rainicon'><i class="fa-solid fa-cloud-showers-heavy"></i></span> {weather && weather.list && weather.list[index] && weather.list[index].pop*100}%</span>
-        <span className='pressure'> <span className='pressureicon'><i class="bx bx-tachometer"></i></span> {weather && weather.list && weather.list[index] && weather.list[index].main.pressure}hpa</span>
+        <span className='feellike'><span className='feellikeicon'><i className="fa-solid fa-temperature-low"></i></span>{weather && weather.list && weather.list[index] && weather.list[index].main.feels_like}°C</span>
+        <span className='daywind'><span className='windicon'><i className="fa-solid fa-wind"></i></span> {weather && weather.list && weather.list[index] && weather.list[index].wind.speed}km/hr</span>
+        <span className='rainchances'> <span className='rainicon'><i className="fa-solid fa-cloud-showers-heavy"></i></span> {weather && weather.list && weather.list[index] && weather.list[index].pop*100}%</span>
+        <span className='pressure'> <span className='pressureicon'><i className="bx bx-tachometer"></i></span> {weather && weather.list && weather.list[index] && weather.list[index].main.pressure}hpa</span>
       </div>
     );
   };
