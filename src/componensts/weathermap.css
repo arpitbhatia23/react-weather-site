@@ -1,14 +1,17 @@
-/* Example CSS */
-.MapContainer {
-    height: 400px; /* Adjust height as needed */
-    width: 100%; /* Adjust width as needed */
-  }
-  
-.searchcontainer{
-    display: flex;
-    height: 41vw;
-    width: 25vw;
-    position: absolute;
-    justify-content: center;
-    right: 0;
+.buttoncontainer{
+  display: block;
+  justify-content: center;
+  width:15vw;
+  position: absolute;
+  top: 5vw;
+  left: 1vw ;
+}
+
+.btn{
+  background: rgba(150, 149, 149, 0.505);
+  backdrop-filter: blur(10px);
+  margin-top: 2vw;
+  height: 3vw;
+  width: 9vw;
+  font-size: 1vmax;
 }
