@@ -20,7 +20,7 @@
   } */
 
   .container2{
-    background: url(./src/assets/defaultbackground.jpg);
+    background: url(/assets/defaultbackground.jpg);
     background-size:cover;
     background-repeat:no-repeat ;
     height: 41vw;

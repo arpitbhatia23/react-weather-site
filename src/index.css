@@ -33,8 +33,8 @@ body {
   place-items: center;
   min-width: 100vw;
   min-height: 100vh;
-  background: url(./assets/background.jpg);
-  background-size:100vw 100vh ;
+  background: url(/assets/background.jpg);
+  background-size:cover;
   background-repeat:no-repeat ;
   color: #f9f9f9;
   overflow: hidden;
@@ -86,11 +86,13 @@ button:focus-visible {
   .container{ display:flex;
     /* align-items: center; */
     height: 50vh;
-    width: 80vw;
-    
+    width: 100vw;
+
+    position:absolute;
+    top:15vh;
+    left: 0;
     background-color: rgba(7, 0, 0, 0.381);
     backdrop-filter: blur(8px);
-    margin-top: 50px;
     animation-name: container;
     justify-content: center;
     animation-duration: 1s;
@@ -102,18 +104,18 @@ button:focus-visible {
         visibility: hidden;
       }
       to{
-       width: 80vw;
+       width: 100vw;
        opacity: 1;
        visibility:visible;
       
       }
     }
     .container2{
-      background: url(./src/assets/defaultbackground.jpg);
+      background: url(/assets/defaultbackground.jpg);
       background-size:cover;
       background-repeat:no-repeat ;
       height: 50vh;
-      width: 55vw;
+      width: 50vw;
       display: flex;
     position: absolute;
     left: 0;
@@ -125,7 +127,10 @@ button:focus-visible {
       display:flex;
       /* align-items: center; */
       height: 50vh;
-      width: 80vw;
+      width: 100vw;
+      position: absolute;
+      top:15vh ;
+      left: 0;
      justify-content: center;
       background-color: rgba(7, 0, 0, 0.381);
       backdrop-filter: blur(8px);
@@ -147,15 +152,14 @@ button:focus-visible {
     }
     img{
 
-      width: 20%;
-      display: flex;
+      width: 15%;
+      display:flex;
       position: absolute;
       top: 2.5vw;
-      right: 6%;
-      justify-content: center;
+      right: 17vw;
     }
     .weather-details{
-      width: 24vw;
+      width: calc(100vw - 51vw);
       
       text-align: center;
       display: flex;
@@ -168,7 +172,7 @@ button:focus-visible {
     }
     .line{
       height: 1px;
-    width: 24vw;
+    width:calc(100vw - 51vw);
       background-color: black;
       position: absolute;
       top: 13vh;
@@ -177,7 +181,7 @@ button:focus-visible {
     }
     .search input{
       position: absolute;
-        width: 20vw;
+        width:calc(100vw - 57vw);
         height: 2vh;
         outline: none;
         border: none;
@@ -193,18 +197,18 @@ button:focus-visible {
       position: absolute;
         font-weight: 200;
         text-transform: uppercase;
-        right: 0.2vw;
-        top: 14vh;
+        right: 0vw;
+        top: 13.3vh;
         position: absolute;
         background: transparent;
         border: none;
         outline: none;
-        font-size: 2.3vw;
+        font-size: 2.6vw;
         cursor: pointer;
     }
     .line2{
       height: 1px;
-    width: 24vw;
+    width: calc(100vw - 51vw);
       position: absolute;
       top: 16vh;
       background-color: black;
@@ -212,7 +216,7 @@ button:focus-visible {
       right: 1vw;
     }
     .city2{
-      width: 35%;
+      width: calc(100vw - 51vw);
       display: flex;
       position: absolute;
       text-align: center;
@@ -223,15 +227,14 @@ button:focus-visible {
     }
     .line3{
       height: 1px;
-    width: 24vw;
+    width: calc(100vw - 51vw);
     background-color: black;
-    
       position: absolute;
       top: 19vh;
       right: 1vw;
     }
     .temp1{
-      width: 24vw;
+      width: calc(100vw - 51vw);
       display: flex;
       position: absolute;
       right: 1vw;
@@ -247,7 +250,7 @@ button:focus-visible {
     }
     .line4{
       height: 1px;
-    width: 24vw;
+    width: calc(100vw - 51vw);
       background-color: black;
       position: absolute;
       top: 22.5vh;
@@ -255,7 +258,7 @@ button:focus-visible {
     }
     .humidity{
       height: 2.5vw;
-    width: 24vw;
+      width: calc(100vw - 51vw);
       display: flex;
       position: absolute;
       right: 1vw;
@@ -269,7 +272,7 @@ position: absolute;
      right: 0;     }
      .line5{
       height: 1px;
-    width: 24vw;
+      width: calc(100vw - 51vw);
       position: absolute;
       background-color: black;
       top: 26.5vh;
@@ -277,8 +280,8 @@ position: absolute;
     }
     .wind{
       height: 2.5vw;
-      width: 24vw;
-          display: flex;
+      width: calc(100vw - 51vw);
+      display: flex;
       position: absolute;
       right: 1vw;
       font-size: 2vw;
@@ -287,23 +290,390 @@ position: absolute;
     .span-wind{
       margin-left: 8vw;
       position: absolute;
-      right: 0;     }
+      right: 1vw;     }
      .line6{
       height: 1px;
-    width: 24vw;
-    background-color: black;
+      width: calc(100vw - 51vw);
+      background-color: black;
       position: absolute;
       top: 30.5vh;
       right: 1vw;
     }
     .loaderimg{
       display: flex;
-      align-items: center;
+      align-items:start;
       justify-content: center;
-      width: 20vh;
-      margin: 0 13vw 0 13vw;
+      width: 25vh;
+      margin: -5vw 13vw 0 13vw;
     }
     h3{
-      margin-top: 15vh;
+      margin-top: 20vh;
     }
+
+/* hourly forcast page */
+
+
+
+.title{
+    display:flex;
+    position:absolute;
+    align-items: center;
+    top: 0vw;
+    justify-content: center;
+    width: calc(100vw - 51vw);
+    height: 3vw;
+    margin-bottom: 20px;
+  }
+  #title{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    font-weight: 500;
+    width: 25vw;
+    height: 3vw;
+    justify-content: center;
+    text-transform: capitalize;
+    font-size: 1.5vmin;
+  }
+  .hours ,.day{
+    display:flex;
+    position:absolute;
+    align-items: center;
+    justify-content: center;
+    right: 0vw;
+    top: 2vw;
+    width: calc(100vw - 50vw);
+    height: 3vw;
+    border: 1px solid rgb(3, 0, 0);
+    /* margin-top: 6vw; */
+  }
+  .time{
+    display: flex;
+    position: absolute;
+    font-size: .7vmax;
+    width: 8vmax;
+    justify-content: left;
+  }
+  .hourlyhumidity{
+    display: inline;
+    position: absolute;
+    right: 3vw;
+
+    font-size: .7vmax;
+
+  }
+  .humidityicon{
+    display: inline;
+    position: absolute;
+    font-size: .9vmax;
+    right: 4.5vw;
+    align-items: center;
+    color:aqua;
+    
+  }
+  .aqi{
+    display: inline;
+    position: absolute;
+    left: 19.5vw;
+    font-size: .7vmax;
+
+  }
+  
+    
+
+  
+  .hours2,.day2 {
+    display:flex;
+    position:absolute;
+    align-items: center;
+    border: 1px solid rgb(0, 0, 0);
+    top: 8vw;
+    right: 0vw;
+    width: calc(100vw - 50vw);
+    height: 3vw;
+    /* margin-top: 1vw; */
+  
+  }
+  .hours3, .day3{
+    display:flex;
+    position:absolute;
+    align-items: center;
+    top: 14vw;
+    right: 0vw;
+    border: 1px solid rgb(0, 0, 0);
+    width: calc(100vw - 50vw);
+    height: 3vw;
+    margin-bottom: 2vw;
+  }
+  .hours4,   .day4{
+    display:flex;
+    position:absolute;
+    align-items: center;
+    top: 20vw;
+    right: 0vw;
+    border: 1px solid rgb(0, 0, 0);
+    width: calc(100vw - 50vw);
+    height: 3vw;
+    margin-bottom: 2vw;
+  }
+  .hours5, .day5{
+    display:flex;
+    position:absolute;
+    align-items: center;
+    top: 26vw;
+    right: 0vw;
+    border: 1px solid rgb(0, 0, 0);
+    width: calc(100vw - 50vw);
+    height: 3vw;
+    margin-bottom: 2vw;
+  
+  }
+  .hours6{
+    display:flex;
+    position:absolute;
+    align-items: center;
+    top: 32vw;
+    right: 0vw;
+    border: 1px solid rgb(0, 0, 0);
+    width: calc(100vw - 50vw);
+    height: 3vw;
+    margin-bottom: 2vw;
+  
+  }
+  .hours7{
+    display:flex;
+    position:absolute;
+    align-items: center;
+    top: 38vw;
+    right: 0vw;
+    border: 1px solid rgb(0, 0, 0);
+    width: calc(100vw - 50vw);
+    height: 3vw;
+    margin-bottom: 2vw;
+  
+  }
+  .hours8{
+    display:flex;
+    position:absolute;
+    align-items: center;
+    top: 44vw;
+    right: 0vw;
+    border: 1px solid rgb(0, 0, 0);
+    width: calc(100vw - 50vw);
+    height: 3vw;
+    margin-bottom: 8vw;
+  
+  }
+  .hourlytemp{ display:inline;
+    position: absolute;
+  left: 4vw;
+    font-size: .7vmax;
+
+  }
+  .tempicon{display: inline;
+    position: absolute;
+    font-size: 1.2vmax;
+    left: 10vw;
+    align-items: center;
+    color:rgb(255, 0, 0);
+  }
+    .feellikeicon{
+      display: flex;
+      position: absolute;
+      font-size: 1vmax;
+      justify-content: center;
+      align-items:start;
+      color:aqua;
+
+    }
+    .rainicon{
+      display: inline;
+      position: absolute;
+      font-size: 1.2vmax;
+      left: 0;
+      align-items: center;
+      color:aqua;
+    }
+    .windicon{
+      display: inline;
+      position: absolute;
+      font-size: 1.2vmax;
+      left: 0;
+      align-items: center;
+      color:aqua;
+
+    }
+    .pressureicon{
+      display: inline;
+        position: absolute;
+        font-size: 1.2vmax;
+        left: 0;
+        align-items: center;
+        color:aqua;
+      }
+  i{
+    display: inline;
+    position: absolute;
+    right: 0.3vw;
+    font-size: 1.2vmax;
+  }
+  .acco{
+    display:flex;
+    position:absolute;
+    align-items: center;
+    /* border: px solid white; */
+    margin-top: 8vw;
+    right: 0vw;
+    width: calc(100vw - 50vw);
+    height: 3vw;
+    margin-bottom: 2vw;
+    visibility:visible;
+    opacity: 5;
+  overflow: hidden;
+  transition: opacity 6s ease-in-out, height 6s ease-in-out;
+    
+  }
+  .feellike{
+    display: inline;
+    position: absolute;
+    font-size: .7vmax;
+    left: 2.7vw;
+
+
+  }
+  .hourlywind,.daywind{
+    display: inline;
+    position: absolute;
+    margin-left: 15vw;
+    font-size: .7vmax;
+
+  }
+  .rainchances{
+    display: inline;
+    position: absolute;
+    font-size: .7vmax;
+
+   left: 20vmax;
+  }
+  .pressure{
+    display: inline;
+    position: absolute;
+    font-size: .7vmax;
+  right: 2vmax;
+  }
+ 
+  .search1 input {
+    height: 3vw;
+    position: absolute;
+    width: calc(100vw - 60vw);
+    height: 2vw;
+    background: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1.5vw;
+    font-weight: 200;
+    text-transform: uppercase;
+    right: 5vw;
+    top: 5vw;
+  }
+    .search1 button{
+    position: absolute;
+      text-transform: uppercase;
+      right: 0vw;
+      top: 4vw;
+      position: absolute;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 2vw;
+      cursor: pointer;
+      color: #000;
+  }
+  .scroll{
+    top: 8vw;
+    height: 50vh;
+    width: calc(100vw - 50vw);
+    right: 0;
+    position: absolute;
+
+  }
+  @media only screen and (max-width:9000px) {
+    
+    .scroll{
+        justify-content: start;
+        align-items: start;
+        overflow-x: scroll;
+    margin-top: 2px; 
+    margin-bottom: 8vw;
+
+    }
+}.scroll::-webkit-scrollbar{
+    
+  display:none;}
+  
+
+/* day forcast page */
+
+  
+ 
+ 
+    
+  
+  .dayhumidity{
+    display: inline;
+    position: absolute;
+    right: 4vw;
+    font-size: .7vmax;
+
+  }
+  .humidityicon{
+    display: inline;
+    position: absolute;
+    font-size: .9vmax;
+    left: 0;
+    align-items: center;
+    color:aqua;
+    
+  }
+  .aqi{
+    display: inline;
+    position: absolute;
+    right: 7vw;
+    font-size: .7vmax;
+
+  }
+  .daytemp{
+    display:inline;
+    position: absolute;
+  left: 4vw;
+  }
+  
+  
+
+  
+  .tempicon{display: inline;
+    font-size: 1.2vmax;
+    position:absolute;
+    left: 14vw;
+    align-items: center;
+    color:rgb(255, 0, 0);
+  }
+   
+   
+    
+    
+  i{
+    display: inline;
+    position: absolute;
+    right: 0.3vw;
+    font-size: 1.2vmax;
+  }
+  
+  
+
+  
+  
+ 
+  
 }
