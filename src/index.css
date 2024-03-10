@@ -553,13 +553,13 @@ position: absolute;
     position: absolute;
     font-size: .7vmax;
 
-   left: 20vmax;
+   left: 30vw;
   }
   .pressure{
     display: inline;
     position: absolute;
     font-size: .7vmax;
-  right: 2vmax;
+  right: 1vw;
   }
  
   .search1 input {
@@ -671,8 +671,34 @@ position: absolute;
   }
   
   
+  .search3{
+    display: flex;
+    z-index: 1000;
+    position: fixed;
+    right: 0;
+    /* bottom: 4rem; */
+    background-color: #646cff;
+  }
+  .search3 input{
+    /* position:absolute; */
+    /* height: 2rem; */
+    /* bottom: 0.3vw; */
+    right: 45vw;
+    width: 16vmax;
 
-  
+    background-color:aliceblue;
+    text-transform: capitalize;
+    text-indent: 10px;
+    color: black;
+  }
+  .search3 button{
+    display: flex;
+    position:fixed;
+    right:  14vmax;
+    font-size: 1.1rem;
+    border: none;
+    background-color: transparent;
+  }
   
  
   

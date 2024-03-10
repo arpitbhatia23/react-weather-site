@@ -1,11 +1,13 @@
 {
   "name": "weather-forcasting",
-  "private": true,
+  "private":false,
+  "homepage": "https://github.com/arpitbhatia23/react-weather-site.git",
   "version": "0.0.0",
   "type": "module",
-
   "scripts": {
-    "dev": "vite --host localhost",
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d dist", 
+   "dev": "vite --host ",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -14,6 +16,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "gh-pages": "^6.1.1",
     "leaflet": "^1.9.4",
     "leaflet-openweathermap": "^1.0.0",
     "react": "^18.2.0",
@@ -24,6 +27,8 @@
     "router": "^1.3.8"
   },
   "devDependencies": {
+    "gh": "^2.8.6",  
+    "pages": "0.0.16"  ,
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
