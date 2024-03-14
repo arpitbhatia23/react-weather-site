@@ -33,7 +33,7 @@ body {
   place-items: center;
   min-width: 100vw;
   min-height: 100vh;
-  background: url(/assets/background.jpg);
+  background: url(/assets/background.webp);
   background-size:cover;
   background-repeat:no-repeat ;
   color: #f9f9f9;
@@ -111,7 +111,7 @@ button:focus-visible {
       }
     }
     .container2{
-      background: url(/assets/defaultbackground.jpg);
+      background: url(/assets/defaultbackground.webp);
       background-size:cover;
       background-repeat:no-repeat ;
       height: 50vh;

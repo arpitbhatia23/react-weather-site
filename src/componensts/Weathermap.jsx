@@ -67,14 +67,14 @@ if (!position ) {
 }
 
     return(<React.StrictMode>
-      <MapContainer  ref={mapRef} center={position}  zoom={11}  style={{width:'100vw',height:'96.3vh', position:'absolute',top:'3rem', left:'0', PaddingBottom:"3rem", }}>
+      <MapContainer  ref={mapRef} center={position}  zoom={11}  style={{width:'100vw',height:'96.5vh', position:'fixed', top:'3rem', left:'0',  }}>
       <LayersControl>
         <TileLayer 
    attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" >&copy; OpenStreetMap contributors</a> <a href="https://openweathermap.org/copyright">&copy; openweather contributors'
    url={'https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=AqYeNWgZfsp2BaEVyM6b'}
    />
 
-          <Marker position={position} icon={new Icon({iconUrl: '/assets/maker.png', iconSize: [45, 47], iconAnchor: [12, 41]})} >
+          <Marker position={position} icon={new Icon({iconUrl: '/assets/maker.webp', iconSize: [45, 47], iconAnchor: [12, 41]})} >
      
         <Tooltip>location</Tooltip>
 

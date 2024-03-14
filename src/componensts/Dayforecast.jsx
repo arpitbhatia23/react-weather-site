@@ -121,57 +121,57 @@ export default function Dayforecast(props) {
         if (weather && weather.list && weather.list[0] && weather.list[0].weather[0]&&weather.list[0].weather[0].main) {
       switch (weather && weather.list && weather.list[0] && weather.list[0].weather[0]&&weather.list[0].weather[0].main) {
         case 'Clear':
-            setimg(<img src="/assets/clear.png"/>);
-            setBackgroundImage('url("/assets/backgrounds/clear-background.jpg")');           // audioElement.src ='sound effects/clear.mp3';
+            setimg(<img src="/assets/clear.webp"/>);
+            setBackgroundImage('url("/assets/backgrounds/clear-background.webp")');           // audioElement.src ='sound effects/clear.mp3';
             break;
         case 'Rain':
-          setimg(<img src="/assets/rain.png"/>);
-          setBackgroundImage('url("/assets/backgrounds/rain-background.jpg")');           // audioElement.src = 'sound effects/rain.mp3';
+          setimg(<img src="/assets/rain.webp"/>);
+          setBackgroundImage('url("/assets/backgrounds/rain-background.webp")');           // audioElement.src = 'sound effects/rain.mp3';
            
             break;
             case 'Storm':
               setimg(<img src="/assets/clouds-raining.gif"/>);
-              setBackgroundImage('url("/assets/backgrounds/rain-background.jpg")');           // audioElement.src = 'sound effects/strom.mp3';
+              setBackgroundImage('url("/assets/backgrounds/rain-background.webp")');           // audioElement.src = 'sound effects/strom.mp3';
 
             break;
         case 'Snow':
-          setimg(<img src="/assets/snow.png"/>);
-          setBackgroundImage('url("/assets/backgrounds/snow-background.jpg")');         // audioElement.src = 'sound effects/snow.mp3';
+          setimg(<img src="/assets/snow.webp"/>);
+          setBackgroundImage('url("/assets/backgrounds/snow-background.webp")');         // audioElement.src = 'sound effects/snow.mp3';
 
             break;
         case 'Clouds':
-          setimg(<img src="/assets/cloud.png"/>);
-          setBackgroundImage('url("/assets/backgrounds/clouds-background.jpg")');          //  audioElement.src = 'sound effects/clear.mp3';
+          setimg(<img src="/assets/cloud.webp"/>);
+          setBackgroundImage('url("/assets/backgrounds/clouds-background.webp")');          //  audioElement.src = 'sound effects/clear.mp3';
           
             break;
         case 'Mist':
-          setimg(<img src="/assets/mist.png"/>);
-          setBackgroundImage('url("/assets/backgrounds/mist-background.jpg")');          //audioElement.src = 'sound effects/fog.mp3';
+          setimg(<img src="/assets/mist.webp"/>);
+          setBackgroundImage('url("/assets/backgrounds/mist-background.webp")');          //audioElement.src = 'sound effects/fog.mp3';
           break;
 
         case 'Haze':
-          setimg(<img src="/assets/mist.png"/>);
+          setimg(<img src="/assets/mist.webp"/>);
           setBackgroundImage('url("/assets/backgrounds/haze-background.webp")');          // audioElement.src = 'sound effects/fog.mp3';
 
             break;
             case 'Fog':
-              setimg(<img src="/assets/mist.png"/>);
-              setBackgroundImage('url("/assets/backgrounds/mist-background.jpg")');              //  audioElement.src = 'sound effects/fog.mp3';
+              setimg(<img src="/assets/mist.webp"/>);
+              setBackgroundImage('url("/assets/backgrounds/mist-background.webp")');              //  audioElement.src = 'sound effects/fog.mp3';
        break;
        case 'Smoke':
-        setimg(<img src="/assets/mist.png"/>);
+        setimg(<img src="/assets/mist.webp"/>);
         setBackgroundImage('url("/assets/backgrounds/haze-background.webp")');              //  audioElement.src = 'sound effects/fog.mp3';
         break;
         case 'Thunderstorm':
           setimg(<img src="/assets/clouds-raining.gif"/>);
-          setBackgroundImage('url("/assets/backgrounds/rain-background.jpg")');           // audioElement.src = 'sound effects/strom.mp3';
+          setBackgroundImage('url("/assets/backgrounds/rain-background.webp")');           // audioElement.src = 'sound effects/strom.mp3';
 
         break;
        
 
             default:
-              setimg(<img src="/assets/clear.png"/>);
-              setBackgroundImage('url("/assets/backgrounds/defaultbackground.jpg")');              //  audioElement.src = 'sound effects/fog.mp3';
+              setimg(<img src="/assets/clear.webp"/>);
+              setBackgroundImage('url("/assets/backgrounds/defaultbackground.webp")');              //  audioElement.src = 'sound effects/fog.mp3';
 
             break;
     }
