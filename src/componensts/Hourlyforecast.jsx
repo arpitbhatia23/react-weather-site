@@ -216,7 +216,7 @@ export default function Hourlyforecast(props) {
     <div className={`acco ${activeIndex === index ? 'active' : ''}`}>
       <span className='feellike'><span className='feellikeicon'><i className="fa-solid fa-temperature-low"></i></span>{weather && weather.list && weather.list[index] && weather.list[index].main.feels_like}°C</span>
       <span className='hourlywind'><span className='windicon'><i className="fa-solid fa-wind"></i></span> {weather && weather.list && weather.list[index] && weather.list[index].wind.speed}km/hr</span>
-      <span className='rainchances'> <span className='rainicon'><i className="fa-solid fa-cloud-showers-heavy"></i></span> {weather && weather.list && weather.list[index] && weather.list[index].pop*100}%</span>
+      <span className='rainchances'> <span className='rainicon'><i className="fa-solid fa-cloud-showers-heavy"></i></span> {parseInt(weather && weather.list && weather.list[index] && weather.list[index].pop*100)}%</span>
       <span className='pressure'> <span className='pressureicon'><i className="bx bx-tachometer"></i></span> {weather && weather.list && weather.list[index] && weather.list[index].main.pressure}hpa</span>
 
     </div>

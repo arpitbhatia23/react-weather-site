@@ -130,7 +130,7 @@ export default function Dayforecast(props) {
            
             break;
             case 'Storm':
-              setimg(<img src="/assets/clouds-raining.gif"/>);
+              setimg(<img src="/assets/clouds-raining.webp"/>);
               setBackgroundImage('url("/assets/backgrounds/rain-background.webp")');           // audioElement.src = 'sound effects/strom.mp3';
 
             break;
@@ -163,7 +163,7 @@ export default function Dayforecast(props) {
         setBackgroundImage('url("/assets/backgrounds/haze-background.webp")');              //  audioElement.src = 'sound effects/fog.mp3';
         break;
         case 'Thunderstorm':
-          setimg(<img src="/assets/clouds-raining.gif"/>);
+          setimg(<img src="/assets/clouds-raining.webp"/>);
           setBackgroundImage('url("/assets/backgrounds/rain-background.webp")');           // audioElement.src = 'sound effects/strom.mp3';
 
         break;

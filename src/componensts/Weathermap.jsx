@@ -75,8 +75,8 @@ if (!position ) {
    />
 
           <Marker position={position} icon={new Icon({iconUrl: '/assets/maker.webp', iconSize: [45, 47], iconAnchor: [12, 41]})} >
-     
-        <Tooltip>location</Tooltip>
+         
+        <Tooltip>your location</Tooltip>
 
     </Marker>
     
