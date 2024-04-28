@@ -194,7 +194,7 @@ if(weather)
       <>
       <div className=' container3'>
       <div className='loader'>
-        <img  className="loaderimg"src='/assets/WeatherIcons.webp'  />
+        <img  className="loaderimg"src='/assets/WeatherIcons.gif'  />
       
 
         <h3 style={{ color: "white", fontSize:'2vw' ,fontWeight: "400",  marginTop:"20vmax"}}>
