@@ -207,6 +207,7 @@ return(
       </div>
     );
   };
+  if(weather){
   return (
     <div className='container' >
 
@@ -277,5 +278,25 @@ return(
      </div>
      <p className='loading'> {loading&&'loading.....'}</p>
      </div>
-  )
+  )}
+  else {
+    return (
+      <>
+      <div className=' container3'>
+      <div className='loader'>
+        <img  className="loaderimg"src='/assets/WeatherIcons.gif'  />
+      
+
+        <h3 style={{ color: "white", fontSize:'2vw' ,fontWeight: "400",  marginTop:"20vmax"}}>
+          Detecting your location
+        </h3>
+        <h3 style={{ color: "white",fontSize:'2vw', marginTop: "2vmax"  }}>
+          Your current location wil be displayed on the App <br></br> & used
+          for calculating Real time weather.
+        </h3>
+        </div>
+        </div>
+      </>
+    );
+  }
 }

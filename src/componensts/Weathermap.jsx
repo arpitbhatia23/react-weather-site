@@ -62,9 +62,27 @@ setquery('')
 search(qeury)
  };
 
-if (!position ) {
-  return <div>Loading...</div>; // You can replace this with a loading indicator
-}
+if (!position) {
+  
+    return (
+      <>
+      <div className=' container3'>
+      <div className='loader'>
+        <img  className="loaderimg"src='/assets/WeatherIcons.gif'  />
+      
+
+        <h3 style={{ color: "white", fontSize:'2vw' ,fontWeight: "400",  marginTop:"20vmax"}}>
+          Detecting your location
+        </h3>
+        <h3 style={{ color: "white",fontSize:'2vw', marginTop: "2vmax"  }}>
+          Your current location wil be displayed on the App <br></br> & used
+          for calculating Real time weather.
+        </h3>
+        </div>
+        </div>
+      </>
+    );
+  }
 
     return(<React.StrictMode>
       <MapContainer  ref={mapRef} center={position}  zoom={11}  style={{width:'100vw',height:'96.5vh', position:'fixed', top:'3rem', left:'0',  }}>
