@@ -1,6 +1,7 @@
 import React, { useState ,useEffect } from 'react';
 import DateTimeComponent from '../currentlocation';
 import './dayforecast.css'
+import { useSelector } from 'react-redux';
 export default function Dayforecast(props) {
   const [activeIndex, setactiveIndex] = useState(null);
   const[qeury,setquery]=useState('');
@@ -12,7 +13,8 @@ export default function Dayforecast(props) {
     const [img,setimg]=useState()
     const [backgroundImage, setBackgroundImage] = useState('');
 
-   
+   const newcity= useSelector(state=>state.data)
+
 
         const search=async(city)=>{
              try{setLoading(true);
@@ -20,10 +22,10 @@ export default function Dayforecast(props) {
       let endpoint;
       let endpoint1;
       let endpoint2;
-      if (typeof city === 'string') {
+      if (typeof newcity === 'string') {
         // If location is a string, treat it as a city name
-      endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${APIKEY}` 
-            endpoint1=    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKEY}`;
+      endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${city || newcity}&units=metric&appid=${APIKEY}` 
+            endpoint1=    `https://api.openweathermap.org/data/2.5/weather?q=${city || newcity}&units=metric&appid=${APIKEY}`;
             const response1 = await fetch(endpoint1);
             let data1 = await response1.json();
             const{lon,lat}=data1.coord
@@ -115,7 +117,11 @@ export default function Dayforecast(props) {
     // } ,[qeury]);
 
       useEffect(() => {
-        getCurrentLocationWeather();
+        if(newcity){
+          search()
+        }
+        else{
+        getCurrentLocationWeather();}
       }, []);
       useEffect(() => {
         if (weather && weather.list && weather.list[0] && weather.list[0].weather[0]&&weather.list[0].weather[0].main) {

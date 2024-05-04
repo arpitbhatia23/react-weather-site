@@ -1,22 +1,23 @@
 import { useState,useEffect } from 'react';
 import DateTimeComponent from '../currentlocation';
 import './forcast.css'
+import { useDispatch } from 'react-redux';
+import { setdata } from '../App/dataslice';
 export default function Forcast() {
-  // Example structure of hourlyData
 
 
-
+const dispatch = useDispatch()
     const[qeury,setquery]=useState('');
     const[weather,setweather]=useState();
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [img,setimg]=useState()
     const [backgroundImage, setBackgroundImage] = useState('');
-    // const navigate=useNavigate();
 
    
 
         const search=async(city)=>{
+
              try{setLoading(true);
       const APIKEY = 'e38b8adced5269e5111dc584c110097a';
       let endpoint;
@@ -40,6 +41,9 @@ export default function Forcast() {
       setweather(data);
       setquery("");
       setError('');
+      const newcity=data.name
+      console.log(newcity)
+      dispatch(setdata(newcity))
     }
      
       catch(error){
@@ -52,8 +56,8 @@ export default function Forcast() {
     };
     const handleSearch = () => {
       search(qeury);
+
     }; 
-  
     const handleKeyPress = (event) => {
       if (event.key === 'Enter') {
         search(qeury);

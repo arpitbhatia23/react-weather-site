@@ -3,9 +3,10 @@ import 'leaflet/dist/leaflet.css';
 import {MapContainer,TileLayer,LayersControl,Marker,Popup, Tooltip} from 'react-leaflet'
 import './weathermap.css'
 import { Icon } from 'leaflet';
+import { useSelector } from 'react-redux';
 export default function Weathermap(){
 const [position,setPosition]=useState()
-
+const newcity = useSelector(state=>state.data)
 const handleGetLocation =()=> {
   navigator.geolocation.getCurrentPosition(
     (position) => {
@@ -24,9 +25,7 @@ const handleGetLocation =()=> {
   );
 };
 
-useEffect(() => {
- handleGetLocation();
-}, []);
+
 
 const[qeury,setquery]=useState('');
 useEffect(()=>{
@@ -38,20 +37,25 @@ const mapRef = useRef(null);
 const search=async(city)=>{
 
   const APIKEY = 'e38b8adced5269e5111dc584c110097a';
- const endpoint=    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKEY}`;
+ const endpoint=    `https://api.openweathermap.org/data/2.5/weather?q=${city?city:newcity}&units=metric&appid=${APIKEY}`;
  const response = await fetch(endpoint);
  let data = await response.json();
  if (data.coord) {
   const { lon, lat } = data.coord;
   const location = { lat, lon };
-  setPosition(location);
+  setPosition(location );
   console.log(location, "loc");
 } else {
   console.error("Error: Unable to retrieve location coordinates.");
 }
 setquery('')
 };
-
+useEffect(() => {
+  if(newcity){
+    search()
+  }else{
+  handleGetLocation();}
+ }, []);
   const handleKeyPress=()=>{
     if (event.key === 'Enter') {
       search(qeury);

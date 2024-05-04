@@ -1,42 +1,31 @@
 import React, { useState ,useEffect } from 'react';
 import DateTimeComponent from '../currentlocation';
 import './hourlyforecast.css'
-// import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 export default function Hourlyforecast(props) {
-  //using usestate hook here
-  //use for  index 
+  
+  const newcity = useSelector(state=>state.data)
   const [activeIndex, setactiveIndex] = useState(null);
-  //use for  query from search
   const[qeury,setquery]=useState('');
-  // use for  fetch data api and use for  append data in website
     const[weather,setweather]=useState();
-  //use for fetch hourly data from api
     const[weather1,setweather1]=useState();
-    // use for air pollution data from api
     const[air,setair]=useState();
-// use  for show that data is loading  or fetching from api
     const [loading, setLoading] = useState(false);
-    // use for show error
     const [error, setError] = useState('');
-  // use for set img orr icon acooriding to weather
     const [img,setimg]=useState()
-    // use for  change background  according to weather
     const [backgroundImage, setBackgroundImage] = useState('');
 
    
-// search data from search data use for fetching data
         const search=async(city)=>{
              try{setLoading(true);
-              // my api key
       const APIKEY = 'e38b8adced5269e5111dc584c110097a';
-      //initilaze endpoint here
       let endpoint;
       let endpoint1;
       let endpoint2;
 
-      if (typeof city === 'string') {
-      endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&exclude=current,minutely,hourly,alerts&&appid=${APIKEY}` 
-            endpoint1=    `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKEY}`;;
+      if (typeof newcity === 'string') {
+      endpoint = `https://api.openweathermap.org/data/2.5/forecast?q=${city || newcity }&units=metric&exclude=current,minutely,hourly,alerts&&appid=${APIKEY}` 
+            endpoint1=    `https://api.openweathermap.org/data/2.5/weather?q=${city || newcity}&units=metric&appid=${APIKEY}`;;
             const response1 = await fetch(endpoint1);
             let data1 = await response1.json();
             const{lon,lat}=data1.coord
@@ -45,7 +34,6 @@ export default function Hourlyforecast(props) {
       }  else {
         throw new Error('Invalid location format');
       }
-      // fetching data from api and store in response
       const response = await fetch(endpoint); 
       const response1 = await fetch(endpoint1); 
       const response2 = await fetch(endpoint2); 
@@ -54,19 +42,16 @@ export default function Hourlyforecast(props) {
           throw new Error('weather data not found')
        }setLoading("loading..")
    
-// storing reponse.json in data
 
         let data = await response.json();
         let data1 = await response1.json();
         let data2 = await response2.json();
-// store data in use state hook
       setweather(data);
       setweather1(data1);
       setair(data2)
       setquery("");
       setError('');
     }
-     // if weather data not get it show this error
       catch(error){
           console.error('Error fetching weather data:', error.message); 
           setError('city not found. Please try again');
@@ -75,17 +60,19 @@ export default function Hourlyforecast(props) {
             setLoading(false);
           }
     };
-    // when we click on search button this function run
     const handleSearch = () => {
       search(qeury);
     };  
-  // when  we click on enter this fuction run
     const handleKeyPress = (event) => {
       if (event.key === 'Enter') {
         search(qeury);
       }
     };
-    // geting my current location and show current location weather report
+   
+
+
+
+   
     const getCurrentLocationWeather = async () => {
       try {
         setLoading(true);
@@ -99,9 +86,7 @@ export default function Hourlyforecast(props) {
     
         const { latitude, longitude } = position.coords;
         const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&exclude=current,minutely,hourly,alerts&&appid=${APIKEY}`);
-        // geting  current locationhourly weather data
         const response1 = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKEY}`);
-        // geting current location air polution
         const response2 = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution/forecast?lat=${latitude}&lon=${longitude}&appid=${APIKEY}`);
 
         if (!response.ok) {
@@ -125,15 +110,16 @@ export default function Hourlyforecast(props) {
         
       }
     };
-    // useEffect(() => {
+    useEffect(() => {
 
-    // navigate("/",{state:{id:qeury}})
-    // } ,[qeury]);
-// run get current location funtion again when site reload 
+    } ,[qeury]);
       useEffect(() => {
-        getCurrentLocationWeather();
+        if(newcity){
+        search();}
+        else{
+          getCurrentLocationWeather()
+        }
       }, []);
-      // changing background or current location acoording to weather
       useEffect(() => {
         if (weather && weather.list && weather.list[0] && weather.list[0].weather[0]&&weather.list[0].weather[0].main) {
       switch (weather && weather.list && weather.list[0] && weather.list[0].weather[0]&&weather.list[0].weather[0].main) {
