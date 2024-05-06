@@ -181,11 +181,11 @@ if(weather)
 <div className='line2'></div>
 <div className='city2'>{weather&&weather.name},{ weather&&weather.sys.country}</div>
 <div className='line3'></div>
-<div className='temp1'>temp <span className='span-temp'>{weather&&weather.main&&weather.main.temp}°C</span></div>
+<div className='temp1'>Temp <span className='span-temp'>{weather&&weather.main&&weather.main.temp}°C</span></div>
 <div className='line4'></div>
-<div className='humidity'>humidity <span className='span-humidity'>{weather&&weather.main&&weather.main.humidity}%</span></div>
+<div className='humidity'>Humidity <span className='span-humidity'>{weather&&weather.main&&weather.main.humidity}%</span></div>
 <div className='line5'></div>
-<div className='wind'>wind<span className='span-wind'>{weather&&weather.wind&&weather.wind.speed}km/hr</span></div>
+<div className='wind'>Wind<span className='span-wind'>{weather&&weather.wind&&weather.wind.speed}km/hr</span></div>
 <div className='line6'></div>
 <p className='loading'> {loading&&'loading..'}</p>
 <div className='line7'></div>
